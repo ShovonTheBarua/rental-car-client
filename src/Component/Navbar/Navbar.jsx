@@ -4,8 +4,8 @@ import { NavLink } from "react-router";
 const Navbar = () => {
 
     const links = <>
-        <li><NavLink>Home</NavLink></li>
-        <li><NavLink>Add Car</NavLink></li>
+        <li><NavLink >Home</NavLink></li>
+        <li><NavLink to='/addCar'>Add Car</NavLink></li>
         <li><NavLink>My Listings</NavLink></li>
         <li><NavLink>My Bookings</NavLink></li>
         <li><NavLink>Browse Cars</NavLink></li>
@@ -39,7 +39,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">RentWheels</a>
+        <a className="text-2xl font-extrabold text-[#233D4D]">RENTWHEELS</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
