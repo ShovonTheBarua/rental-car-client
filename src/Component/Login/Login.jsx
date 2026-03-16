@@ -1,18 +1,21 @@
-import React, { use } from "react";
 import { Link } from "react-router";
-import { AuthContext } from "../../Context/AuthContext";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-  const {signInUser, signInWithGoogle} = use(AuthContext)
+  const { signInUser, signInWithGoogle } = useAuth();
 
-  const handleSignInUser = (e) =>{
-    e.preventDefault()
+  const handleSignInUser = (e) => {
+    e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInUser(email, password)
-    .then((res) =>{console.log(res)})
-    .catch((err)=>{console.log(err)})
-  }
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const handleGoogleLogin = (e) => {
     e.preventDefault();
@@ -30,12 +33,16 @@ const Login = () => {
           Login
         </h1>
         <fieldset className="flex flex-col space-y-4">
-          
           <div>
             <label className="label font-bold mb-2">Email</label>
-            <input type="email" name="email" className="input w-full" placeholder="Email" />
+            <input
+              type="email"
+              name="email"
+              className="input w-full"
+              placeholder="Email"
+            />
           </div>
-          
+
           <div>
             <label className="label font-bold mb-2">Password</label>
             <input
@@ -49,7 +56,10 @@ const Login = () => {
           <div className="flex flex-col gap-2">
             <button className="btn btn-primary mt-4 ">Sign up</button>
             {/* Google */}
-            <button onClick={handleGoogleLogin} className="btn bg-white text-black border-[#e5e5e5]">
+            <button
+              onClick={handleGoogleLogin}
+              className="btn bg-white text-black border-[#e5e5e5]"
+            >
               <svg
                 aria-label="Google logo"
                 width="16"

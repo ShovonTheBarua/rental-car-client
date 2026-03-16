@@ -1,12 +1,10 @@
-import { use, useState } from "react";
 import { Link } from "react-router";
-import { AuthContext } from "../../Context/AuthContext";
 import { updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const { signInWithGoogle, createAUser, user } = use(AuthContext);
-  const [error, setError] = useState("");
+  const { signInWithGoogle, createAUser } = useAuth;
 
   const handleGoogleLogin = (e) => {
     e.preventDefault();
@@ -32,17 +30,20 @@ const Register = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
 
     if (!passwordRegex.test(password)) {
-      toast.error("Password must contain uppercase, lowercase, number and be 6+ characters", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-      });
+      toast.error(
+        "Password must contain uppercase, lowercase, number and be 6+ characters",
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        },
+      );
       return;
     }
 
