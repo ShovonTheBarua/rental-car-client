@@ -1,10 +1,12 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
 import { updateProfile } from "firebase/auth";
+import { Bounce, toast } from "react-toastify";
 
 const Register = () => {
-  const { signInWithGoogle, createAUser ,user } = use(AuthContext);
+  const { signInWithGoogle, createAUser, user } = use(AuthContext);
+  const [error, setError] = useState("");
 
   const handleGoogleLogin = (e) => {
     e.preventDefault();
@@ -27,21 +29,42 @@ const Register = () => {
     const password = e.target.password.value;
     const photoURL = e.target.photo.value;
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+    if (!passwordRegex.test(password)) {
+      toast.error("Password must contain uppercase, lowercase, number and be 6+ characters", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+      return;
+    }
+
     createAUser(email, password)
-    .then((res)=>{ 
-      console.log(res)
-      user.displayname = name
-      user.photoURL = photoURL
-      
-      const createdUser = res.user
-      // profile update (name, photoURL)
-      updateProfile(createdUser, {
-        displayName: name,
-        photoURL: photoURL,
-      }).then(() => {console.log('updated profile')})
-      .catch9((err) => {console.log(err)})
-    })
-    .catch((err) => {console.log(err)})
+      .then((res) => {
+        console.log(res);
+        const createdUser = res.user;
+        // profile update (name, photoURL)
+        updateProfile(createdUser, {
+          displayName: name,
+          photoURL: photoURL,
+        })
+          .then(() => {
+            console.log("updated profile");
+          })
+          .catch9((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -58,6 +81,7 @@ const Register = () => {
               name="name"
               className="input w-full"
               placeholder="name"
+              required
             />
           </div>
           <div>
@@ -67,6 +91,7 @@ const Register = () => {
               name="email"
               className="input w-full"
               placeholder="Email"
+              required
             />
           </div>
           <div>
@@ -85,6 +110,7 @@ const Register = () => {
               name="password"
               className="input w-full"
               placeholder="********"
+              required
             />
           </div>
 

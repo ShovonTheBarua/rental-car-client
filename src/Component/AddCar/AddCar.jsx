@@ -36,7 +36,7 @@ const AddCar = () => {
                 <option>Electric</option>
               </select>
             
-            <div className="flex justify-between ">
+            <div className="flex justify-between gap-2">
               <div>
                 <label className="label font-bold mb-2">Car Name</label>
                 <input

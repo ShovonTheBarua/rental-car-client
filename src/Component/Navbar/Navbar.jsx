@@ -67,9 +67,6 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          // <Link onClick={handleLogOut} to="/register" className="btn btn-primary">
-          //   Log Out
-          // </Link>
           <div>
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="">
@@ -79,10 +76,8 @@ const Navbar = () => {
                 tabIndex="-1"
                 className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
               >
-                <li>
+                <li className="mb-2">
                   <a>{user.displayName}</a>
-                </li>
-                <li>
                   <a>{user.email}</a>
                 </li>
                 <li>
