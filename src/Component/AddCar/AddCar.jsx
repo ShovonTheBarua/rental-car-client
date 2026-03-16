@@ -3,7 +3,7 @@ import React from "react";
 const AddCar = () => {
   return (
     <div className="">
-      <div className="bg-white max-w-2xl mx-auto my-auto mt-20 shadow-2xl shadow-slate-800">
+      <div className="bg-white max-w-2xl mx-auto my-auto mt-20 shadow-2xl shadow-slate-800  rounded-2xl">
         <form className="p-8 ">
           <h1 className="text-center text-gray-700 text-4xl font-bold mb-3">Add A Car</h1>
           <fieldset className="flex flex-col space-y-4">

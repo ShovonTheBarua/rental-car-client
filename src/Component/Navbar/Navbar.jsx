@@ -1,15 +1,36 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { use } from "react";
+import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
+  const { user, signOutUser } = use(AuthContext);
 
-    const links = <>
-        <li><NavLink >Home</NavLink></li>
-        <li><NavLink to='/addCar'>Add Car</NavLink></li>
-        <li><NavLink>My Listings</NavLink></li>
-        <li><NavLink>My Bookings</NavLink></li>
-        <li><NavLink>Browse Cars</NavLink></li>
+  const handleLogOut = () => {
+    signOutUser()
+      .then(() => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const links = (
+    <>
+      <li>
+        <NavLink>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/addCar">Add Car</NavLink>
+      </li>
+      <li>
+        <NavLink>My Listings</NavLink>
+      </li>
+      <li>
+        <NavLink>My Bookings</NavLink>
+      </li>
+      <li>
+        <NavLink>Browse Cars</NavLink>
+      </li>
     </>
+  );
 
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -39,15 +60,48 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="text-2xl font-extrabold text-[#233D4D]">RENTWHEELS</a>
+        <a className="text-2xl font-extrabold text-[#36367d]">RENTWHEELS</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-        {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary">Login</a>
+        {user ? (
+          // <Link onClick={handleLogOut} to="/register" className="btn btn-primary">
+          //   Log Out
+          // </Link>
+          <div>
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="">
+                <img src={user.photoURL} className="rounded-full w-10" alt="" />
+              </div>
+              <ul
+                tabIndex="-1"
+                className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              >
+                <li>
+                  <a>{user.displayName}</a>
+                </li>
+                <li>
+                  <a>{user.email}</a>
+                </li>
+                <li>
+                  <Link
+                    onClick={handleLogOut}
+                    to="/register"
+                    className="btn btn-primary"
+                  >
+                    Log Out
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <Link to="/register" className="btn btn-primary">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
