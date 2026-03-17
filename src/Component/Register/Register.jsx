@@ -1,10 +1,11 @@
 import { Link } from "react-router";
+
 import { updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
 import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const { signInWithGoogle, createAUser } = useAuth;
+  const { signInWithGoogle, createAUser } = useAuth();
 
   const handleGoogleLogin = (e) => {
     e.preventDefault();

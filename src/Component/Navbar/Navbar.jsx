@@ -20,13 +20,13 @@ const Navbar = () => {
         <NavLink to="/addCar">Add Car</NavLink>
       </li>
       <li>
-        <NavLink>My Listings</NavLink>
+        <NavLink to="/myListings">My Listings</NavLink>
       </li>
       <li>
         <NavLink>My Bookings</NavLink>
       </li>
       <li>
-        <NavLink>Browse Cars</NavLink>
+        <NavLink to="/browseCars">Browse Cars</NavLink>
       </li>
     </>
   );

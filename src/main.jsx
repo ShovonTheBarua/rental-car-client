@@ -10,6 +10,8 @@ import AddCar from "./Component/AddCar/AddCar.jsx";
 import Register from "./Component/Register/Register.jsx";
 import Login from "./Component/Login/Login.jsx";
 import AuthProvider from "./Context/AuthProvider.jsx";
+import MyListings from "./Component/MyListings/MyListings.jsx";
+import BrowseCars from "./Component/BrowseCars/BrowseCars.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "addCar",
         element: <AddCar></AddCar>,
+      },
+      {
+        path: "myListings",
+        element: <MyListings></MyListings>
+      },
+      {
+        path: 'browseCars',
+        Component: BrowseCars,
       },
       {
         path: "register",
