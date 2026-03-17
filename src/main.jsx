@@ -12,6 +12,7 @@ import Login from "./Component/Login/Login.jsx";
 import AuthProvider from "./Context/AuthProvider.jsx";
 import MyListings from "./Component/MyListings/MyListings.jsx";
 import BrowseCars from "./Component/BrowseCars/BrowseCars.jsx";
+import CarDetails from "./Component/CarDetails/CarDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,11 +29,15 @@ const router = createBrowserRouter([
       },
       {
         path: "myListings",
-        element: <MyListings></MyListings>
+        element: <MyListings></MyListings>,
       },
       {
-        path: 'browseCars',
+        path: "browseCars",
         Component: BrowseCars,
+      },
+      {
+        path: "carDetails/:id",
+        element: <CarDetails></CarDetails>
       },
       {
         path: "register",
@@ -50,7 +55,6 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
-      
     </AuthProvider>
   </StrictMode>,
 );
