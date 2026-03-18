@@ -17,7 +17,7 @@ const AddCar = () => {
     const location = e.target.location.value;
     const photoURL = e.target.photoURL.value;
     const description = e.target.description.value;
-    const status = 'available'
+    const status = 'Available'
 
     const newCar = {
       UserName,

@@ -28,6 +28,17 @@ const MyBookings = () => {
             <h1 className="text-xl text-white font-semibold">{car.CarName}</h1>
             <p className="text-gray-300 text-sm">{car.category}</p>
           </div>
+          <div>
+            <button
+              className={`rounded-full px-3 py-1 text-sm font-light absolute top-3 right-3 ${
+                car.status === "Booked"
+                  ? "bg-green-100 text-green-700"
+                  : "bg-gray-200 text-gray-500"
+              }`}
+            >
+              {car.status}
+            </button>
+          </div>
           <figure className="absolute pt-10">
             <img src={car.photoURL} alt="" />
           </figure>
