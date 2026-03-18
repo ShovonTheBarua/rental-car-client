@@ -13,6 +13,7 @@ import AuthProvider from "./Context/AuthProvider.jsx";
 import MyListings from "./Component/MyListings/MyListings.jsx";
 import BrowseCars from "./Component/BrowseCars/BrowseCars.jsx";
 import CarDetails from "./Component/CarDetails/CarDetails.jsx";
+import MyBookings from "./Component/MyBookings/MyBookings.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "carDetails/:id",
         element: <CarDetails></CarDetails>
+      },
+      {
+        path: "myBookings",
+        element: <MyBookings></MyBookings>
       },
       {
         path: "register",
