@@ -2,12 +2,12 @@ import React from "react";
 
 const RentWithUs = () => {
   return (
-    <div>
-      <h1 className="text-4xl mb-8 font-bold text-center text-secondary">
-        Why Rent With Us?
+    <div className="max-w-7xl mx-auto pt-10">
+      <h1 className="text-4xl mb-8 font-bold text-white">
+        WHY RENT WITH US?
       </h1>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className=" grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="text-[#E6E6FA] bg-secondary  px-4 py-8 rounded-xl">
           <h1 className="text-2xl font-medium mb-4">Easy & Fast Booking</h1>
           <p className="text-gray-400">

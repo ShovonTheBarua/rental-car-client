@@ -13,7 +13,7 @@ const Slider = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={true}
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Navigation, Pagination, Autoplay,]}
       >
         <SwiperSlide className="relative">
           <div className="absolute p-5 md:p-15">

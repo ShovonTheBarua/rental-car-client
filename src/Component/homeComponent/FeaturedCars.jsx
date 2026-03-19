@@ -14,9 +14,9 @@ const FeaturedCars = () => {
   }, [instance]);
 
   return (
-    <div className="my-20">
-        <h1 className="text-4xl mb-8 font-bold text-center text-secondary">Rent The Best</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-5 md:px-20 lg:px-0">
+    <div className="my-15 max-w-7xl mx-auto">
+        <h1 className="text-4xl mb-8 font-bold  text-secondary">RENT THE BEST</h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4  px-5 md:px-10 lg:px-0">
         {featuredCars.map((car) => (
           <div
             key={car._id}
