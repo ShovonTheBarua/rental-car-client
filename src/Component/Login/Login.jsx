@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-white max-w-xl mx-auto my-auto mt-20 shadow-2xl shadow-slate-800 rounded-2xl">
+    <div className="bg-white max-w-xl mx-auto my-20 shadow-2xl shadow-slate-800 rounded-2xl">
       <form onSubmit={handleSignInUser} className="p-8 ">
         <h1 className="text-center text-gray-700 text-4xl font-bold mb-3">
           Login

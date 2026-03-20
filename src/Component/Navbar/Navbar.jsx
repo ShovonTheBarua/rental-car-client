@@ -16,15 +16,21 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/addCar">Add Car</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myListings">My Listings</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myBookings">My Bookings</NavLink>
-      </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink to="/addCar">Add Car</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myListings">My Listings</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myBookings">My Bookings</NavLink>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
       <li>
         <NavLink to="/browseCars">Browse Cars</NavLink>
       </li>
@@ -60,7 +66,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div>
-          <img className="h-15 w-50 object-cover " src="https://i.ibb.co.com/xK11M1NM/rentwheels-carbon-fiber-removebg-preview.png" alt="" />
+          <img
+            className="h-15 w-50 object-cover "
+            src="https://i.ibb.co.com/xK11M1NM/rentwheels-carbon-fiber-removebg-preview.png"
+            alt=""
+          />
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
