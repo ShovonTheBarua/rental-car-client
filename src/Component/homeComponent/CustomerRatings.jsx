@@ -4,12 +4,12 @@ import React from "react";
 
 const CustomerRatings = () => {
   return (
-    <div className="max-w-7xl mx-auto pb-10">
+    <div className="max-w-7xl mx-auto pb-10 px-4">
       <h1 className="text-4xl mb-8 font-bold text-white">
         CUSTOMER TESTIMONIALS
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-15 ">
-        <div className="w-96 bg-white p-4 rounded-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-15 ">
+        <div className=" w-86 md:w-96 bg-white p-4 rounded-2xl">
           <FontAwesomeIcon
             className="text-[#5D67D9] text-6xl mb-3"
             icon={faQuoteLeft}
@@ -21,7 +21,7 @@ const CustomerRatings = () => {
           </p>
           <p>~ Sarah Ahmed</p>
         </div>
-        <div className="w-96 bg-white p-4 rounded-2xl">
+        <div className="w-86 md:w-96 bg-white p-4 rounded-2xl">
           <FontAwesomeIcon
             className="text-[#5D67D9] text-6xl mb-3"
             icon={faQuoteLeft}
@@ -33,7 +33,7 @@ const CustomerRatings = () => {
           </p>
           <p>~ James Wilson</p>
         </div>
-        <div className="w-96 bg-white p-4 rounded-2xl ">
+        <div className="w-86 md:w-96 bg-white p-4 rounded-2xl ">
           <FontAwesomeIcon
             className="text-[#5D67D9] text-6xl mb-3"
             icon={faQuoteLeft}

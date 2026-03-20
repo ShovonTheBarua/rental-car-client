@@ -105,7 +105,11 @@ const MyListings = () => {
   };
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mb-20">
+       <h1 className="text-3xl mb-4 mt-8 font-bold text-secondary">
+        Manage Your Listings
+      </h1>
+    <div className="overflow-x-auto max-w-7xl mx-auto  ">
       <table className="table">
         {/* head */}
         <thead>
@@ -285,6 +289,7 @@ const MyListings = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

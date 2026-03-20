@@ -14,6 +14,7 @@ import MyListings from "./Component/MyListings/MyListings.jsx";
 import BrowseCars from "./Component/BrowseCars/BrowseCars.jsx";
 import CarDetails from "./Component/CarDetails/CarDetails.jsx";
 import MyBookings from "./Component/MyBookings/MyBookings.jsx";
+import ErrorPage from "./Component/Error/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    Component: ErrorPage,
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

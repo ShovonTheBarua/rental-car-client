@@ -2,13 +2,13 @@ import React from "react";
 
 const TopRated = () => {
   return (
-    <div className="max-w-7xl mx-auto my-15">
+    <div className="max-w-7xl mx-auto my-15 px-4">
       <h1 className="text-4xl mb-8 font-bold  text-white">TOP RATED CARS</h1>
 
-      <div className="flex justify-between ">
+      <div className="flex justify-between flex-col md:flex-row gap-4">
         <div className="relative group ">
           <img
-            className="h-120 w-100  object-cover "
+            className="h-60 md:h-120 w-100  object-cover "
             src="https://i.ibb.co.com/ch0cvCT6/melvin-brizuela-z-MGr-Pdj-Ro-OU-unsplash.jpg"
             alt=""
           />
@@ -21,7 +21,7 @@ const TopRated = () => {
         </div>
         <div className="relative group">
           <img
-            className="h-120 w-100  object-cover"
+            className="h-60 md:h-120 w-100  object-cover"
             src="https://i.ibb.co.com/KJ4m3W1/martin-katler-y3ne-Nk-E6ef-I-unsplash.jpg"
             alt=""
           />
@@ -34,7 +34,7 @@ const TopRated = () => {
         </div>
         <div className="relative group">
           <img
-            className="h-120 w-100  object-cover"
+            className="h-60 md:h-120 w-100  object-cover"
             src="https://i.ibb.co.com/v4ndGhwy/josh-berquist-4s-Wbz-H5fp8-unsplash.jpg"
             alt=""
           />

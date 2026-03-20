@@ -14,7 +14,12 @@ const BrowseCars = () => {
   }, [instance]);
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-5 md:px-20 lg:px-30">
+    <div className="max-w-7xl  mb-20 mx-auto">
+        <h1 className="text-3xl mb-4 mt-8 font-bold text-secondary">
+        Browse Latest Cars
+      </h1>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4   px-5 md:px-20 lg:px-0 ">
+
       {browseCars.map((car) => (
         <div
           key={car._id}
@@ -53,6 +58,7 @@ const BrowseCars = () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };
