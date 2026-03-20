@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import useAxios from "../../hooks/useAxios";
 import { useParams } from "react-router";
 import { Bounce, toast } from "react-toastify";
+import useAuth from "../../hooks/useAuth";
 
 const CarDetails = () => {
   const instance = useAxios();
+  const {user} = useAuth()
   const [car, setCar] = useState();
   const { id } = useParams();
   console.log(id);
+
 
   useEffect(() => {
     instance.get(`/carDetails/${id}`).then((data) => {
@@ -17,7 +20,10 @@ const CarDetails = () => {
   }, [instance, id]);
 
   const handleCarBooking = () => {
-    const updateStatus = { status: "Booked" };
+    const updateStatus = {
+       status: "Booked",
+       BookingEmail: user?.email
+      };
     instance.patch(`/carDetails/${id}`, updateStatus).then((data) => {
       console.log(data);
       if (data.data.acknowledged) {
